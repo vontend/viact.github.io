@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Tạo site của bạn · Viact</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Docusaurus được tạo ra với hi vọng làm một site siêu đơn giản cho việc phát triển tài liệu dự án của bạn.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Tạo site của bạn · Viact"/><meta property="og:type" content="website"/><meta property="og:url" content="https://viact.github.io/"/><meta property="og:description" content="&lt;p&gt;Docusaurus được tạo ra với hi vọng làm một site siêu đơn giản cho việc phát triển tài liệu dự án của bạn.&lt;/p&gt;
+"/><meta property="og:image" content="https://viact.github.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://viact.github.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://viact.github.io/blog/atom.xml" title="Viact Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://viact.github.io/blog/feed.xml" title="Viact Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/docusaurus.svg" alt="Viact"/><h2 class="headerTitleWithLogo">Viact</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/doc1" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/docs/docusaurus/installation" target="_self">Docusaurus</a></li><li class=""><a href="/help" target="_self">Help</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Bắt đầu</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Bắt đầu</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docusaurus/installation">Cài đặt</a></li><li class="navListItem"><a class="navItem" href="/docs/docusaurus/site-preparation">Chuẩn bị website</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/docusaurus/create-your-site">Tạo site của bạn</a></li><li class="navListItem"><a class="navItem" href="/docs/docusaurus/publishing-your-site">Xuất bản website</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Tạo site của bạn</h1></header><article><div><span><p>Docusaurus được tạo ra với hi vọng làm một site siêu đơn giản cho việc phát triển tài liệu dự án của bạn.</p>
+<p>Sau khi cài đặt và chuẩn bị site, gần như các công việc cơ bản để tạo nên website tại liệu của bạn đã hoàn tất.</p>
+<h2><a class="anchor" aria-hidden="true" id="cấu-truc-website"></a><a href="#cấu-truc-website" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cấu trúc website</h2>
+<pre><code class="hljs">root-directory
+├── docs
+└── website
+    ├── blog
+    ├── core
+    │   └── Footer.js
+    ├── package.json
+    ├── pages
+    ├── sidebars.json
+    ├── siteConfig.js
+    └── static
+</code></pre>
+<blockquote>
+<p>Ở đây giả định rằng bạn đã xoá tất cả các file tài liệu mẫu <code>.md</code> được cài đặt khi chạy script khởi tạo dự án.</p>
+</blockquote>
+<p>Tất cả tài liệu của bạn nên được chứa trong thư mục <code>docs</code> dưới dạng tập tin Markdown <code>.md</code>. Tất cả các blog nên được viết bên trong thư mục <code>blog</code>.</p>
+<blockquote>
+<p>Các bài blog phải được đặt tên theo đúng định dạng <code>YYYY-MM-DD-your-file-name.md</code>.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="tạo-site-cơ-bản"></a><a href="#tạo-site-cơ-bản" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tạo site cơ bản</h2>
+<p>Để tạo một trang đầy đủ chức năng, bạn chỉ cần thực hiện các bước sau đây:</p>
+<ol>
+<li><p>Tạo tài liệu của bạn bên trong thư mục <code>docs</code> với định dạng <code>.md</code>. Đảm bảo rằng bạn có tiêu đề phù hợp trong mỗi tệp. Tiêu đề đơn giản nhất như trong ví dụ sau đây, <code>id</code> là tên link (Ví dụ: <code>docs/intro.html</code>) và <code>title</code> là tiêu đề của website:</p>
+<hr>
+<p>id: intro
+title: Getting Started</p>
+<hr>
+<p>My new content here..</p></li>
+<li><p>Thêm hoặc không thêm tài liệu vào <code>sidebars.json</code> để tài liệu được hiển thị trên sidebar.</p></li>
+</ol>
+<blockquote>
+<p>Nếu bạn không thêm tài liệu vào <code>sidebars.json</code>, tài liệu vẫn được render nhưng chúng chỉ có thể được link từ tài liệu khác hoặc được truy cập bằng cách dùng một URL cho trước.</p>
+</blockquote>
+<ol start="3">
+<li><p>Chỉnh sửa tệp <code>website/siteConfig.js</code> để cấu hình website, làm theo hướng dẫn của những dòng comment bên trong tệp này.</p></li>
+<li><p>Tạo một trang tuỳ chỉnh và/hoặc tuỳ chỉnh <code>website/core/Footer.js</code> hiển thị footer của web bạn.</p></li>
+<li><p>Tạo ra các asset ví dụ như hình ảnh bên trong thư mục <code>website/static</code>.</p></li>
+<li><p>Chạy website mà bạn vừa sửa.</p>
+<p>cd website
+yarn run start // or <code>npm run start</code></p></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="tuỳ-chỉnh-đặc-biệt"></a><a href="#tuỳ-chỉnh-đặc-biệt" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tuỳ chỉnh đặc biệt</h2>
+<h3><a class="anchor" aria-hidden="true" id="landing-page"></a><a href="#landing-page" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Landing page</h3>
+<p>Nếu bạn muốn Landing page của mình đi thẳng vào một tài liệu nào đó thì có thể dùng redirect.</p>
+<ol>
+<li><p>Xoá tệp <code>index.js</code> bên trong <code>website/pages</code> nếu nó tồn tại.</p></li>
+<li><p>Tạo một trang <code>index.html</code> tĩnh bên trong thư mục <code>website/static</code> với nội dung:</p>
+<pre><code class="hljs css language-&lt;!DOCTYPE HTML&gt;"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en-US"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"refresh"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"0; url=docs/id-of-doc-to-land-on.html"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+      <span class="hljs-built_in">window</span>.location.href = <span class="hljs-string">'docs/id-of-doc-to-land-on.html'</span>;
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Your Site Title Here<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    If you are not redirected automatically, follow this <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"docs/id-of-doc-to-land-on.html"</span>&gt;</span>link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>.
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre></li>
+</ol>
+<blockquote>
+<p>Chèn <code>id</code> của tài liệu mà bạn muốn truy cập vào code bên trong thẻ script phía trên.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="thuần-blog"></a><a href="#thuần-blog" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Thuần blog</h3>
+<p>Bạn có thể sử dụng Docusaurus để tạo một trang Thuần blog.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/docusaurus/site-preparation"><span class="arrow-prev">← </span><span>Chuẩn bị website</span></a><a class="docs-next button" href="/docs/docusaurus/publishing-your-site"><span>Xuất bản website</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#cấu-truc-website">Cấu trúc website</a></li><li><a href="#tạo-site-cơ-bản">Tạo site cơ bản</a></li><li><a href="#tuỳ-chỉnh-đặc-biệt">Tuỳ chỉnh đặc biệt</a><ul class="toc-headings"><li><a href="#landing-page">Landing page</a></li><li><a href="#thuần-blog">Thuần blog</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/docusaurus.svg" alt="Viact" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div></body></html>

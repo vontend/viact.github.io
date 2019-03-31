@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Cài đặt · Viact</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Docusaurus giúp bạn cài và chạy website tài liệu một cách nhanh chóng.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Cài đặt · Viact"/><meta property="og:type" content="website"/><meta property="og:url" content="https://viact.github.io/"/><meta property="og:description" content="&lt;p&gt;Docusaurus giúp bạn cài và chạy website tài liệu một cách nhanh chóng.&lt;/p&gt;
+"/><meta property="og:image" content="https://viact.github.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://viact.github.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://viact.github.io/blog/atom.xml" title="Viact Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://viact.github.io/blog/feed.xml" title="Viact Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/docusaurus.svg" alt="Viact"/><h2 class="headerTitleWithLogo">Viact</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/doc1" target="_self">Docs</a></li><li class="siteNavGroupActive siteNavItemActive"><a href="/docs/docusaurus/installation" target="_self">Docusaurus</a></li><li class=""><a href="/help" target="_self">Help</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Bắt đầu</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Bắt đầu</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/docusaurus/installation">Cài đặt</a></li><li class="navListItem"><a class="navItem" href="/docs/docusaurus/site-preparation">Chuẩn bị website</a></li><li class="navListItem"><a class="navItem" href="/docs/docusaurus/create-your-site">Tạo site của bạn</a></li><li class="navListItem"><a class="navItem" href="/docs/docusaurus/publishing-your-site">Xuất bản website</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Cài đặt</h1></header><article><div><span><p>Docusaurus giúp bạn cài và chạy website tài liệu một cách nhanh chóng.</p>
+<h2><a class="anchor" aria-hidden="true" id="cai-đặt-docusaurus"></a><a href="#cai-đặt-docusaurus" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cài đặt Docusaurus</h2>
+<p>Facebook đã tạo một script để việc cài đặt cực kỳ dễ dàng:</p>
+<ol>
+<li>Đảm bảo rằng bạn đã cài đặt phiên bản <a href="https://nodejs.org">Node</a>. Họ cũng khuyến khích bạn cài <a href="https://yarnpkg.com/en/docs/install">Yarn</a>:</li>
+</ol>
+<blockquote>
+<p>Bạn phải có Node &gt;= 8.x và Yarn &gt;= 15.</p>
+</blockquote>
+<ol start="2">
+<li>Tạo project nếu chưa tồn tại và truy cập vào thư mục gốc của project <code>cd your-project-root</code>.</li>
+</ol>
+<p>Tại đây bạn sẽ tạo thư mục <strong>docs</strong> nơi chứa các tài liệu. Thư mục gốc cũng có thể chứa các file khác tuỳ bạn. Script cài đặt Docusaurus sẽ tạo ra 2 thư mục <code>docs-examples-from-docusaurus</code> và <code>website</code>.</p>
+<blockquote>
+<p>Thông thường một dự án hiện hữu hoặc tạo mới một Github project sẽ là nơi cho trang Docusaurus của bạn nhưng không bắt buộc bạn dùng Docusaurus.</p>
+</blockquote>
+<ol start="3">
+<li>Chạy lệnh cài đặt Docusaurus <code>npx docusaurus-init</code>.</li>
+</ol>
+<blockquote>
+<p>Nếu bạn không có Node phiên bản từ 8.2 hoặc nếu bạn muốn cài đặt Docusaurus toàn cục (global) thì chạy <code>yarn global add docusaurus-init</code> hoặc <code>npm install --global docusaurus-init</code>. Sau đó chạy <code>docusaurus-init</code></p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="kiểm-tra-việc-cai-đặt"></a><a href="#kiểm-tra-việc-cai-đặt" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kiểm tra việc cài đặt</h2>
+<p>Cùng với các file và thư mục trước đó trong thư mục gốc thì giờ cấu trúc thư mục của bạn có thể tương tự như sau:</p>
+<pre><code class="hljs">root-directory
+├── docs-examples-from-docusaurus
+│   ├── doc1.md
+│   ├── doc2.md
+│   ├── doc3.md
+│   ├── exampledoc4.md
+│   └── exampledoc5.md
+└── website
+  ├── blog-examples-from-docusaurus
+  │   ├── 2016-03-11-blog-post.md
+  │   ├── 2017-04-10-blog-post-two.md
+  │   ├── 2017-09-25-testing-rss.md
+  │   ├── 2017-09-26-adding-rss.md
+  │   └── 2017-10-24-new-version-1.0.0.md
+  ├── core
+  │   └── Footer.js
+  ├── package.json
+  ├── pages
+  ├── sidebars.json
+  ├── siteConfig.js
+  └── static
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="chạy-thử"></a><a href="#chạy-thử" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Chạy thử</h2>
+<p>Sau khi chạy script cài đặt <code>docusaurus-init</code> bạn đã có thể chạy thử website của mình với một số tài liệu mẫu. Để chạy:</p>
+<ol>
+<li>Trong thư mục gốc, đổi tên <code>docs-examples-from-docusaurus</code> thành <code>docs</code>.</li>
+<li><code>cd website</code></li>
+<li>Đổi tên <code>blog-examples-from-docusaurus</code> thành <code>blog</code>.</li>
+<li>Bên trong thư mục <code>website</code> chạy lệnh <code>yarn start</code> hoặc <code>npm start</code>.</li>
+<li>Truy cập website của bạn tại địa chỉ <a href="http://localhost:3000">http://localhost:3000</a> nếu máy bạn không tự động mở.</li>
+<li>Bạn sẽ nhìn thấy website mẫu trên trình duyệt. Ở đây thì LiveReload server cũng chạy và bất kỳ thay đổi nào với các tài liệu của bạn hoặc các tập tin bên trong thư mục website sẽ làm server refresh bạn sẽ nhìn thấy thay đổi.</li>
+</ol>
+<p><img src="https://docusaurus.io/img/getting-started-preparation-verify.png" alt="Cài đặt Docusaurus"></p>
+<h3><a class="anchor" aria-hidden="true" id="chạy-server-đằng-sau-proxy"></a><a href="#chạy-server-đằng-sau-proxy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Chạy server đằng sau proxy</h3>
+<p>Nếu như máy bạn nằm sau proxy công ty, bạn cần phải vô hiệu hoá nó bằng cách sử dụng biến môi trường <code>NO_PROXY</code></p>
+<pre><code class="hljs">SET NO_PROXY=localhost
+yarn start (or npm run start)
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="cập-nhật-phien-bản-docusaurus-của-bạn"></a><a href="#cập-nhật-phien-bản-docusaurus-của-bạn" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cập nhật phiên bản Docusaurus của bạn</h2>
+<p>Sau khi cài đặt Docusaurus, bất kỳ khi nào bạn cũng có thể kiểm tra phiên bản hiện hành của Docusaurus bằng cách vào thư mục <code>website</code> và chạy <code>yarn outdated docusaurus</code> hoặc <code>npm outdated docusaurus</code>:</p>
+<pre><code class="hljs">$ yarn outdated
+Using globally installed version of Yarn
+yarn outdated v1.5.1
+warning package.json: No license field
+warning No license field
+info Color legend :
+ &quot;&lt;red&gt;&quot;    : Major Update backward-incompatible updates
+ &quot;&lt;yellow&gt;&quot; : Minor Update backward-compatible features
+ &quot;&lt;green&gt;&quot;  : Patch Update backward-compatible bug fixes
+Package    Current Wanted Latest Package Type    URL
+docusaurus 1.0.9   1.2.0  1.2.0  devDependencies https://github.com/facebook/Docusaurus#readme
+✨  Done in 0.41s.
+</code></pre>
+<blockquote>
+<p>Nếu bạn không thấy thông báo nào từ lệnh <code>outdated</code>, bạn đang có phiên bản cao nhất.</p>
+</blockquote>
+<p>Bạn có thể cập nhật phiên bản mới nhất bằng cách</p>
+<pre><code class="hljs">yarn upgrade docusaurus --latest
+</code></pre>
+<p>hoặc</p>
+<pre><code class="hljs">npm update docusaurus
+</code></pre>
+<p>Nếu bạn thấy rằng mình gặp lỗi sau khi nâng cấp, hãy thử xoá bộ nhớ cách của Babel thường trong <a href="https://babeljs.io/docs/en/babel-register/#environment-variables">temporary directory</a> hoặc chạy Docusaurus server (<code>yarn start</code>) với <code>BABEL_DISABLE_CACHE=1</code>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/docusaurus/site-preparation"><span>Chuẩn bị website</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#cai-đặt-docusaurus">Cài đặt Docusaurus</a></li><li><a href="#kiểm-tra-việc-cai-đặt">Kiểm tra việc cài đặt</a></li><li><a href="#chạy-thử">Chạy thử</a><ul class="toc-headings"><li><a href="#chạy-server-đằng-sau-proxy">Chạy server đằng sau proxy</a></li></ul></li><li><a href="#cập-nhật-phien-bản-docusaurus-của-bạn">Cập nhật phiên bản Docusaurus của bạn</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/docusaurus.svg" alt="Viact" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div></body></html>
